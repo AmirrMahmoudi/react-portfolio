@@ -3,7 +3,7 @@ import { Heading, Text } from "@chakra-ui/react";
 export function App() {
   return (
     <>
-      <Heading color="primary.light">Title</Heading>
+      <Heading color="">Title</Heading>
       <Text>text</Text>
     </>
   );
