@@ -12,25 +12,37 @@ import {
   Box,
 } from "@chakra-ui/react";
 
-import { ChevronDownIcon } from "@chakra-ui/icons";
-
 import logoImg from "@/assets/images/logo.png";
 import bubbleImg from "@/assets/images/bubble.png";
 import flagENImg from "@/assets/images/flag-en.png";
 import flagFRImg from "@/assets/images/flag-fr.png";
 import flagFAImg from "@/assets/images/ir.png";
 import { useTranslation } from "react-i18next";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 export const Header = () => {
   const { t, i18n } = useTranslation("home");
   const switchLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
+  const getFlagImage = (language) => {
+    switch (language) {
+      case "en":
+        return flagENImg;
+      case "fr":
+        return flagFRImg;
+      case "fa":
+        return flagFAImg;
+      default:
+        return flagENImg; // default image
+    }
+  };
+
   return (
     <Flex justify={"space-between"}>
       <Image src={logoImg} h={10} />
       <HStack>
-        <Image src={bubbleImg} h={10} />
+        <Image src={bubbleImg} h={10}  />
         <Link
           href="mailto:cs.amirhossein@gmail.com?subject=Contacting you from your portfolio"
           fontSize="lg"
@@ -41,16 +53,10 @@ export const Header = () => {
         <Menu>
           <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
             <Image
-              src={
-                i18n.language === "en"
-                  ? flagENImg
-                  : i18n.language === "fr"
-                  ? flagFRImg
-                  : flagFAImg
-              }
+              src={getFlagImage(i18n.language)}
               borderRadius={"50%"}
-              h={8}
-              w={8}
+              h={9}
+              w={9}
               cursor={"pointer"}
             />
           </MenuButton>
@@ -63,7 +69,7 @@ export const Header = () => {
             </MenuItem>
             <MenuItem onClick={() => switchLanguage("fa")}>
               <Box display="flex" w={"90%"} justifyContent={"space-between"}>
-                <Image src={flagFAImg} h={9} w={9} borderRadius={"50%"} />
+                <Image src={flagFAImg} h={8} w={8} borderRadius={"50%"} />
                 <Text>فارسی</Text>
               </Box>
             </MenuItem>
