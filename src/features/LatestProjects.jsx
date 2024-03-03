@@ -1,3 +1,4 @@
+import { Badge } from "@/components/Badge";
 import { ImageSlider } from "@/components/ImageSlider/ImageSlider";
 import { Box, Flex, Heading, Wrap, WrapItem, Text } from "@chakra-ui/react";
 import { useState } from "react";
@@ -46,7 +47,7 @@ export const LatestProjects = () => {
   const [projects, setProjects] = useState(FAKE_PROJECTS);
   const { t } = useTranslation("home");
 
-  const renderProject = ({ id, images, title, description }) => {
+  const renderProject = ({ id, images, title, description, technologies }) => {
     return (
       <WrapItem key={id} flexDir={"column"}>
         <ImageSlider imageList={images} />
@@ -62,6 +63,13 @@ export const LatestProjects = () => {
           {title}
         </Heading>
         <Text>{description}</Text>
+        <Wrap mt={2} maxWidth={350}>
+          {technologies.map((tech) => (
+            <WrapItem key={tech}>
+              <Badge bg={tech}>{tech}</Badge>
+            </WrapItem>
+          ))}
+        </Wrap>
       </WrapItem>
     );
   };
