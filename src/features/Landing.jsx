@@ -1,31 +1,34 @@
 import { Box, Badge, Flex, Image, Heading, Text } from "@chakra-ui/react";
 import humanImg from "@/assets/images/human.png";
+import { useTranslation } from "react-i18next";
 export const Landing = () => {
+  const { t } = useTranslation("home");
   const leftSection = (
     <Box>
       <Heading
         fontSize={{ base: "2xl", md: "4xl", xl: "7xl" }}
         color="secondary"
+        whiteSpace={"pre-line"}
       >
-        Hi, my name <br /> is Codiku
+        {t("greetings")}{" "}
         <Text as={"span"} color={"primary.dark"}>
           .
         </Text>
       </Heading>
       <Text fontSize={"lg"} color="secondary">
-        I am{" "}
+        {t("iAm")}{" "}
         <Text as="span" fontWeight={"bold"}>
           {" "}
-          a freelance developer{" "}
+          {t("job")}{" "}
         </Text>
-        <br /> located in Mashhad/Iran
+        <br /> {t("location")}
       </Text>
     </Box>
   );
   const badgeExperience = (
     <Badge bg={"primary.light"} borderRadius={7} p={3} textAlign={"center"}>
       <Text fontSize={"x-large"}>{new Date().getFullYear() - 2023}</Text>
-      <Text>years of experience</Text>
+      <Text>{t("yearsExp")}</Text>
     </Badge>
   );
 

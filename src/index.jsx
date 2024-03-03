@@ -1,5 +1,6 @@
 import "@fontsource/inter";
 import "@fontsource/poppins";
+import "@/locales/i18n-config";
 
 import ReactDOM from "react-dom/client";
 import { App } from "./App";
