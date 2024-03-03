@@ -10,7 +10,7 @@ export const Landing = () => {
         color="secondary"
         whiteSpace={"pre-line"}
       >
-        {t("greetings")}{" "}
+        {t("greetings")}
         <Text as={"span"} color={"primary.dark"}>
           .
         </Text>

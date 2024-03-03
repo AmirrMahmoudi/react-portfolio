@@ -2,8 +2,8 @@
     "greetings": "Hi, my name \n is Amirhossein",
     "iAm": "I am",
     "job": "a freelance developer/instructor",
-    "location":"located in Mashhad/Iran",
-    "hireMe":"Hire me",
-    "yearsExp":"years of experience"
-
+    "location": "located in Mashhad/Iran",
+    "hireMe": "Hire me",
+    "yearsExp": "years of experience",
+    "latestProjects": "latest Projects"
 }
