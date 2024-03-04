@@ -39,10 +39,14 @@ export const Header = () => {
   };
 
   return (
-    <Flex justify={"space-between"}>
+    <Flex
+      justify={"space-between"}
+      dir={i18n.language === "fa" ? "rtl" : "ltr"}
+      
+    >
       <Image src={logoImg} h={10} />
       <HStack>
-        <Image src={bubbleImg} h={10}  />
+        <Image src={bubbleImg} h={10} />
         <Link
           href="mailto:cs.amirhossein@gmail.com?subject=Contacting you from your portfolio"
           fontSize="lg"

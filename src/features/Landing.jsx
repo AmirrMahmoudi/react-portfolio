@@ -17,13 +17,16 @@ const SKILLS = [
   { label: "Node.JS" },
 ];
 export const Landing = () => {
-  const { t } = useTranslation("home");
+  const { t, i18n } = useTranslation("home");
+
   const leftSection = (
     <Box>
       <Heading
         fontSize={{ base: "2xl", md: "4xl", xl: "7xl" }}
         color="secondary"
         whiteSpace={"pre-line"}
+      fontFamily={i18n.language === "fa" && "Vazirmatn"}
+
       >
         {t("greetings")}
         <Text as={"span"} color={"primary.dark"}>
@@ -63,6 +66,8 @@ export const Landing = () => {
 
   return (
     <Flex
+      dir={i18n.language === "fa" ? "rtl" : "ltr"}
+      fontFamily={i18n.language === "fa" && "Vazirmatn"}
       direction={{ base: "column", md: "row" }}
       justify={"space-evenly"}
       mt={{ base: 50, md: 150 }}
