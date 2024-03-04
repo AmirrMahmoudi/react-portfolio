@@ -9,6 +9,7 @@ const colors = {
   black: "#000000",
 
   React: "#FF7308",
+  Tailwind: "#0ea5e9",
   Redux: "black",
   Typescript: "#0F1B61",
   "Node.JS": "#000000bc",
