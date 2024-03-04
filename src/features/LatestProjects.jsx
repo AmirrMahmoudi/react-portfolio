@@ -18,7 +18,7 @@ export const LatestProjects = () => {
 
   const renderProject = ({ id, images, title, description, technologies }) => {
     return (
-      <WrapItem key={id} flexDir={"column"}>
+      <WrapItem key={id} flexDir={"column"} alignItems={"baseline"}>
         <Box h={210}>
           <ImageSlider imageList={images.map((img) => img.downloadURL)} />
         </Box>
